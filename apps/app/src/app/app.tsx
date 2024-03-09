@@ -1,5 +1,6 @@
 import { type FC } from 'react'
 import { Redirect, Route } from 'react-router-dom'
+import { CapacitorUpdater } from '@capgo/capacitor-updater'
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 
@@ -22,6 +23,7 @@ import '@ionic/react/css/display.css'
 import '../theme/variables.css'
 
 setupIonicReact()
+CapacitorUpdater.notifyAppReady().catch(console.error)
 
 export const App: FC = () => (
   <IonApp>

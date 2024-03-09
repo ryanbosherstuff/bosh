@@ -1,8 +1,5 @@
 PODS:
   - Alamofire (5.9.0)
-  - ByteowlsCapacitorOauth2 (5.0.0):
-    - Capacitor
-    - OAuthSwift (= 2.2.0)
   - Capacitor (5.7.2):
     - CapacitorCordova
   - CapacitorApp (5.0.7):
@@ -18,33 +15,19 @@ PODS:
     - Capacitor
   - CapacitorNetwork (5.0.7):
     - Capacitor
-  - CapacitorPluginSafeArea (2.0.6):
-    - Capacitor
-  - CapacitorPreferences (5.0.7):
-    - Capacitor
-  - CapacitorPushNotifications (5.1.1):
-    - Capacitor
-  - CapacitorShare (5.0.7):
-    - Capacitor
   - CapacitorSplashScreen (5.0.7):
     - Capacitor
   - CapacitorStatusBar (5.0.7):
-    - Capacitor
-  - CapacitorTextZoom (5.0.7):
     - Capacitor
   - CapgoCapacitorUpdater (5.6.11):
     - Alamofire
     - Capacitor
     - SSZipArchive
     - Version
-  - CordovaPlugins (6.0.5):
-    - CapacitorCordova
-  - OAuthSwift (2.2.0)
   - SSZipArchive (2.4.3)
   - Version (0.8.0)
 
 DEPENDENCIES:
-  - "ByteowlsCapacitorOauth2 (from `../../../../node_modules/.pnpm/@byteowls+capacitor-oauth2@5.0.0_@capacitor+core@5.7.2/node_modules/@byteowls/capacitor-oauth2`)"
   - "Capacitor (from `../../../../node_modules/.pnpm/@capacitor+ios@5.7.2_@capacitor+core@5.7.2/node_modules/@capacitor/ios`)"
   - "CapacitorApp (from `../../../../node_modules/.pnpm/@capacitor+app@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/app`)"
   - "CapacitorBrowser (from `../../../../node_modules/.pnpm/@capacitor+browser@5.2.0_@capacitor+core@5.7.2/node_modules/@capacitor/browser`)"
@@ -53,26 +36,17 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../../../node_modules/.pnpm/@capacitor+keyboard@5.0.8_@capacitor+core@5.7.2/node_modules/@capacitor/keyboard`)"
   - "CapacitorNetwork (from `../../../../node_modules/.pnpm/@capacitor+network@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/network`)"
-  - "CapacitorPluginSafeArea (from `../../../../node_modules/.pnpm/capacitor-plugin-safe-area@2.0.6_@capacitor+core@5.7.2/node_modules/capacitor-plugin-safe-area`)"
-  - "CapacitorPreferences (from `../../../../node_modules/.pnpm/@capacitor+preferences@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/preferences`)"
-  - "CapacitorPushNotifications (from `../../../../node_modules/.pnpm/@capacitor+push-notifications@5.1.1_@capacitor+core@5.7.2/node_modules/@capacitor/push-notifications`)"
-  - "CapacitorShare (from `../../../../node_modules/.pnpm/@capacitor+share@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/share`)"
   - "CapacitorSplashScreen (from `../../../../node_modules/.pnpm/@capacitor+splash-screen@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/splash-screen`)"
   - "CapacitorStatusBar (from `../../../../node_modules/.pnpm/@capacitor+status-bar@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/status-bar`)"
-  - "CapacitorTextZoom (from `../../../../node_modules/.pnpm/@capacitor+text-zoom@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/text-zoom`)"
   - "CapgoCapacitorUpdater (from `../../../../node_modules/.pnpm/@capgo+capacitor-updater@5.6.11_@capacitor+core@5.7.2/node_modules/@capgo/capacitor-updater`)"
-  - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - OAuthSwift
     - SSZipArchive
     - Version
 
 EXTERNAL SOURCES:
-  ByteowlsCapacitorOauth2:
-    :path: "../../../../node_modules/.pnpm/@byteowls+capacitor-oauth2@5.0.0_@capacitor+core@5.7.2/node_modules/@byteowls/capacitor-oauth2"
   Capacitor:
     :path: "../../../../node_modules/.pnpm/@capacitor+ios@5.7.2_@capacitor+core@5.7.2/node_modules/@capacitor/ios"
   CapacitorApp:
@@ -89,28 +63,15 @@ EXTERNAL SOURCES:
     :path: "../../../../node_modules/.pnpm/@capacitor+keyboard@5.0.8_@capacitor+core@5.7.2/node_modules/@capacitor/keyboard"
   CapacitorNetwork:
     :path: "../../../../node_modules/.pnpm/@capacitor+network@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/network"
-  CapacitorPluginSafeArea:
-    :path: "../../../../node_modules/.pnpm/capacitor-plugin-safe-area@2.0.6_@capacitor+core@5.7.2/node_modules/capacitor-plugin-safe-area"
-  CapacitorPreferences:
-    :path: "../../../../node_modules/.pnpm/@capacitor+preferences@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/preferences"
-  CapacitorPushNotifications:
-    :path: "../../../../node_modules/.pnpm/@capacitor+push-notifications@5.1.1_@capacitor+core@5.7.2/node_modules/@capacitor/push-notifications"
-  CapacitorShare:
-    :path: "../../../../node_modules/.pnpm/@capacitor+share@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/share"
   CapacitorSplashScreen:
     :path: "../../../../node_modules/.pnpm/@capacitor+splash-screen@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/splash-screen"
   CapacitorStatusBar:
     :path: "../../../../node_modules/.pnpm/@capacitor+status-bar@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/status-bar"
-  CapacitorTextZoom:
-    :path: "../../../../node_modules/.pnpm/@capacitor+text-zoom@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/text-zoom"
   CapgoCapacitorUpdater:
     :path: "../../../../node_modules/.pnpm/@capgo+capacitor-updater@5.6.11_@capacitor+core@5.7.2/node_modules/@capgo/capacitor-updater"
-  CordovaPlugins:
-    :path: "../capacitor-cordova-ios-plugins"
 
 SPEC CHECKSUMS:
   Alamofire: 02b772c9910e8eba1a079227c32fbd9e46c90a24
-  ByteowlsCapacitorOauth2: 9e7cdae2bf251463a6ad89493e27fb288bf694d7
   Capacitor: fc7ef6d935eafb0df9eaaf109ca69be16c51a2d2
   CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
   CapacitorBrowser: a6deae9e5bf87f62b62a753cff7992c5def9e771
@@ -119,19 +80,12 @@ SPEC CHECKSUMS:
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
   CapacitorKeyboard: aec619a578235c6ce279075009a2689c2cf5c42c
   CapacitorNetwork: 81ef9728aa7a65cac8c1181ce79e578162b57b57
-  CapacitorPluginSafeArea: d55e4d4e70c98f611240f11dd80561438d0d70cb
-  CapacitorPreferences: 77ac427e98db83bace772455f8ba447430382c4c
-  CapacitorPushNotifications: 2327900bc002f5ff49ee6d2231796d0635b4a1b0
-  CapacitorShare: c6a1ebbf0114ff9e863b966cd6052678fa25d480
   CapacitorSplashScreen: dd3de3f3644710fa2a697cfb91ec262eece4d242
   CapacitorStatusBar: f390fbb49b82ffb754ea4b3cf71dc8b048baf3e7
-  CapacitorTextZoom: 69814a62b1d0f23a899cca06ea9838c38de187ff
   CapgoCapacitorUpdater: 4a4ef200546a54ac2c6aeaddad8530d4e4141acd
-  CordovaPlugins: 1d5d36ccfe0236b1e7ce310e07280d968c8911ae
-  OAuthSwift: 75efbb5bd9a4b2b71a37bd7e986bf3f55ddd54c6
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Version: de5907f2c5d0f3cf21708db7801d1d5401139486
 
-PODFILE CHECKSUM: 721ef1d301396492c668834ba91467334a02c75b
+PODFILE CHECKSUM: cb5e560d1aa4353f1143331f4c1484c3ecd88a89
 
 COCOAPODS: 1.15.2

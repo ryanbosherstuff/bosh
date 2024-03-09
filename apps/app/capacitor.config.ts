@@ -1,4 +1,58 @@
-import { type CapacitorConfig } from '@bosh-code/cli'
+import { type CapacitorConfig } from '@capacitor/cli'
+import { networkInterfaces } from 'node:os'
+
+/**
+ * Helper function to get machine's local ip address if live-reloading Android
+ */
+const getIpAddress = (): string | undefined => {
+  const interfaces = networkInterfaces()
+
+  for (const name of Object.keys(interfaces)) {
+    for (const net of interfaces[name]!) {
+      if (net.family === 'IPv4' && !net.internal) {
+        return net.address
+      }
+    }
+  }
+
+  return undefined
+}
+
+/**
+ * Sets the live reload server if live env var is set. Defaults to empty object
+ */
+const getWebServerURL = () => {
+  if (process.env['LIVE']) {
+    let url: string
+
+    const ip = getIpAddress()
+
+    if (!ip) throw ('Failed to obtain IP address')
+
+    // iOS Simulator uses the same ip as host device, Android does not.
+    // Use localhost on iOS so that live reload can access more environments.
+    if (process.env['PLATFORM'] === 'IOS') {
+      url = 'http://localhost:4200'
+    } else if (ip) {
+      url = `http://${ip}:4200`
+    }
+
+    console.log(`Live reloading enabled. Serving: ${url}`)
+
+    return {
+      url,
+      cleartext: true,
+    }
+  } else return {}
+}
+
+const getUpdateServerURL = (): string => {
+  const ip = getIpAddress()
+
+  if (!ip) throw ('Failed to obtain IP address')
+
+  return `http://${ip}:3000/update`
+}
 
 // Stuff specific config that deviates from base
 const config: CapacitorConfig = {
@@ -10,6 +64,7 @@ const config: CapacitorConfig = {
     path: 'android',
     webContentsDebuggingEnabled: true
   },
+  server: getWebServerURL(),
   ios: {
     path: 'ios',
     // Use a mobile useragent on iPad, resolves SRP-3779
@@ -18,32 +73,22 @@ const config: CapacitorConfig = {
     webContentsDebuggingEnabled: true
   },
   includePlugins: [
-    '@byteowls/capacitor-oauth2',
     '@capacitor/app',
     '@capacitor/browser',
     '@capacitor/device',
     '@capacitor/haptics',
     '@capacitor/keyboard',
     '@capacitor/network',
-    '@capacitor/preferences',
-    '@capacitor/push-notifications',
-    '@capacitor/share',
     '@capacitor/splash-screen',
     '@capacitor/status-bar',
-    '@capacitor/text-zoom',
     '@capgo/capacitor-updater',
-    'capacitor-plugin-safe-area',
-    'cordova-plugin-inappbrowser',
   ],
   plugins: {
     CapacitorUpdater: {
-      autoUpdate: false,
+      updateUrl: getUpdateServerURL(),
     },
     CapacitorCookies: {
       enabled: true,
-    },
-    PushNotifications: {
-      presentationOptions: ['badge', 'sound', 'alert'],
     },
     SplashScreen: {
       launchAutoHide: true,

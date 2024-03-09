@@ -37,6 +37,21 @@
           "command": "npx cap open ios"
         }
       }
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx cap",
+        "cwd": "apps/app"
+      },
+      "configurations": {
+        "android": {
+          "command": "npx cap run android"
+        },
+        "ios": {
+          "command": "npx cap run ios"
+        }
+      }
     }
   },
   "tags": []

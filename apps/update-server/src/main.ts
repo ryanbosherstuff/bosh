@@ -16,14 +16,14 @@ const demoCapGoAppURL = 'https://github.com/Cap-go/demo-app/releases/download/0.
 app.post('/updates/test', (req: Request, res: Response) => {
   const appInfo = req.body as AppInfo
 
-  console.log('BOSH: main: appInfo:', appInfo)
+  console.log('BOSH: main: appInfo.version_name:', appInfo.version_name)
 
   // Test incremental updates. We have already updated to 0.0.2 to send 0.0.3
   if (appInfo.version_name === '0.0.2') {
-    console.log('BOSH: main: appInfo.version_name:', appInfo.version_name)
+    console.log('BOSH: main: sending 0.0.3 update!')
     res.status(200).send({
       version: '0.0.3',
-      url: 'http://github.com/ryanbosherstuff/bosh/releases/download/0.0.3/test-0.0.3.zip'
+      url: 'https://github.com/ryanbosherstuff/bosh/releases/download/0.0.3/dist.zip'
       // url: baseURL + 'test-0.0.3.zip'
     })
 

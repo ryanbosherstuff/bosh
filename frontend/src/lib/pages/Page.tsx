@@ -1,9 +1,15 @@
 import { type FC } from 'react'
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react'
 
+import { useCapacitorUpdaterContext } from '../providers'
+
 import './Page.css'
 
 export const Page: FC = () => {
+
+  const { currentBundle } = useCapacitorUpdaterContext()
+
+  console.log('BOSH: Page: currentBundle:', JSON.stringify(currentBundle))
 
   return (
     <IonPage>
@@ -23,7 +29,7 @@ export const Page: FC = () => {
           </IonToolbar>
         </IonHeader>
         <h1>
-          This is app version 0.0.1.
+          This is app version 0.0.1. (builtin)
         </h1>
         <p>
           Try putting the app into background for a bit then re-opening it.

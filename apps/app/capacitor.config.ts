@@ -81,6 +81,7 @@ const config: CapacitorConfig = {
     '@capacitor/app',
     '@capacitor/browser',
     '@capacitor/device',
+    '@capacitor/dialog',
     '@capacitor/haptics',
     '@capacitor/keyboard',
     '@capacitor/network',

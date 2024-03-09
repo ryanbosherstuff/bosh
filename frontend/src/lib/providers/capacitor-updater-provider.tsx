@@ -1,6 +1,7 @@
 import { type Context, createContext, type FC, type ReactNode, useContext, useEffect, useMemo, useState } from 'react'
 import { App, type AppState } from '@capacitor/app'
 import { type PluginListenerHandle } from '@capacitor/core'
+import { Dialog } from '@capacitor/dialog'
 import {
   type AppReadyEvent,
   type BundleInfo,
@@ -17,7 +18,7 @@ interface CapacitorUpdaterContextType {
 const CapacitorUpdaterContext: Context<CapacitorUpdaterContextType> = createContext({} as CapacitorUpdaterContextType)
 export const useCapacitorUpdaterContext = () => useContext(CapacitorUpdaterContext)
 
-let bundleLol: BundleInfo
+let bundleLol: BundleInfo | undefined
 
 export const CapacitorUpdateProvider: FC<{ children: ReactNode }> = ({ children }) => {
   // Reference to the next bundle to be applied
@@ -33,13 +34,13 @@ export const CapacitorUpdateProvider: FC<{ children: ReactNode }> = ({ children 
     setAppStateChangeListener(await App.addListener('appStateChange', async (state: AppState) => {
       console.log('BOSH: capacitor-updater-provider: appStateChange: bundle: ', bundle)
 
-      let localBundle: BundleInfo
+      let localBundle: BundleInfo | undefined = undefined
       if (bundle) {
         localBundle = bundle
-        console.log('BOSH: capacitor-updater-provider: state bundle GOOD');
-      } else {
+        console.log('BOSH: capacitor-updater-provider: state bundle GOOD HOLY SHIT')
+      } else if (bundleLol) {
         localBundle = bundleLol
-        console.log('BOSH: capacitor-updater-provider: state bundle BAD, bundleLOL GOOOOD');
+        console.log('BOSH: capacitor-updater-provider: state bundle BAD, bundleLOL GOOOOD. DAMN')
       }
 
       // If app has entered background, and we have a bundle downloaded, apply it.
@@ -54,6 +55,7 @@ export const CapacitorUpdateProvider: FC<{ children: ReactNode }> = ({ children 
           await CapacitorUpdater.set({ id: localBundle.id })
           // Clear the state variable to prevent applying the same bundle again
           setBundle(undefined)
+          bundleLol = undefined
           // At this point, the new bundle should be active, and will need to hide the splash screen
           // await SplashScreen.hide()
         } catch (e) {
@@ -110,6 +112,11 @@ export const CapacitorUpdateProvider: FC<{ children: ReactNode }> = ({ children 
     CapacitorUpdater.addListener('updateAvailable', async (updateAvailableEvent: updateAvailableEvent) => {
       // TODO: show an ion alert
       console.log('BOSH: use-app-listeners: updateAvailableEvent:', JSON.stringify(updateAvailableEvent))
+
+      await Dialog.alert({
+        title: 'Update Available',
+        message: 'An update has been downloading and will be applied on the next app background event.',
+      })
 
       // Set the bundle to the new update as it's now ready
       bundleLol = updateAvailableEvent.bundle

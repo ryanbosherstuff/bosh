@@ -1,5 +1,6 @@
-import { type FC } from 'react'
+import { type FC, useEffect } from 'react'
 import { Route } from 'react-router-dom'
+import { SplashScreen } from '@capacitor/splash-screen'
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 
@@ -24,8 +25,13 @@ import '../theme/variables.css'
 setupIonicReact()
 
 export const App: FC = () => {
+
+  useEffect(() => {
+    // SplashScreen.hide().catch(console.error)
+  }, [])
+
   return (
-    <CapacitorUpdateProvider>
+    // <CapacitorUpdateProvider>
       <IonApp>
         <IonReactRouter>
           <IonRouterOutlet id="main">
@@ -35,6 +41,6 @@ export const App: FC = () => {
           </IonRouterOutlet>
         </IonReactRouter>
       </IonApp>
-    </CapacitorUpdateProvider>
+    // </CapacitorUpdateProvider>
   )
 }

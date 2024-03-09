@@ -13,11 +13,15 @@ CapApp.addListener('appStateChange', async (state: AppState) => {
   console.log('BOSH: app: appStateChange!!!!!!!!!!!!!!!!!!!!!!:', state)
 
   if (state.isActive) {
-    // Ensure download occurs while the app is active, or download may fail
-    bundle = await CapacitorUpdater.download({
-      version: '0.0.3',
-      url: 'https://github.com/Cap-go/demo-app/releases/download/0.0.3-v4/dist.zip',
-    })
+    const {version, url} = await CapacitorUpdater.getLatest()
+
+    if (version && url) {
+      // Ensure download occurs while the app is active, or download may fail
+      bundle = await CapacitorUpdater.download({
+        version: version,
+        url: url,
+      })
+    }
   }
 
   if (!state.isActive && bundle) {

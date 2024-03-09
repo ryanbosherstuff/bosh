@@ -22,13 +22,15 @@ app.post('/updates/test', (req: Request, res: Response) => {
     console.log('BOSH: main: appInfo.version_name:', appInfo.version_name);
     res.status(200).send({
       version: '0.0.3',
-      url: baseURL + 'test-0.0.3.zip'
+      url: 'https://github.com/Cap-go/demo-app/releases/download/0.0.3-v4/dist.zip'
+      // url: baseURL + 'test-0.0.3.zip'
     })
   } else {
     console.log('BOSH: main: sending 0.0.2 update:');
     res.status(200).send({
       version: '0.0.2',
-      url: baseURL + 'test-0.0.2.zip'
+      url: 'https://github.com/Cap-go/demo-app/releases/download/0.0.3-v4/dist.zip'
+      // url: baseURL + 'test-0.0.2.zip'
     })
   }
 })

@@ -76,14 +76,14 @@
     "@bosh-code/cli": "^6.0.5",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "~8.57.0",
-    "@nx/eslint": "18.0.6",
-    "@nx/eslint-plugin": "18.0.6",
-    "@nx/jest": "18.0.6",
-    "@nx/js": "18.0.6",
-    "@nx/react": "18.0.6",
-    "@nx/web": "18.0.6",
-    "@nx/webpack": "18.0.6",
-    "@nx/workspace": "18.0.6",
+    "@nx/eslint": "18.0.8",
+    "@nx/eslint-plugin": "18.0.8",
+    "@nx/jest": "18.0.8",
+    "@nx/js": "18.0.8",
+    "@nx/react": "18.0.8",
+    "@nx/web": "18.0.8",
+    "@nx/webpack": "18.0.8",
+    "@nx/workspace": "18.0.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@svgr/webpack": "^8.0.1",
     "@swc-node/register": "1.9.0",
@@ -143,3 +143,4 @@
     "webpack-merge": "^5.10.0"
   }
 }
+

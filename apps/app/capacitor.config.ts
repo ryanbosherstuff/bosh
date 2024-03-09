@@ -52,7 +52,11 @@ const getUpdateServerURL = (): string => {
 
   if (!ip) throw ('Failed to obtain IP address')
 
-  return `http://${ip}:3000/updates/${env.toLowerCase()}`
+  const url = `http://${ip}:3000/updates/${env.toLowerCase()}`
+
+  console.log('BOSH: capacitor.config: update server url:', url)
+
+  return url
 }
 
 // Stuff specific config that deviates from base
@@ -86,7 +90,14 @@ const config: CapacitorConfig = {
   ],
   plugins: {
     CapacitorUpdater: {
+      autoUpdate: false,
       updateUrl: getUpdateServerURL(),
+      // autoUpdate: true,
+      // directUpdate: true,
+      // allowModifyUrl: true,
+      statsUrl: '',
+      // version: '0.0.1',
+      defaultChannel: 'test'
     },
     CapacitorCookies: {
       enabled: true,

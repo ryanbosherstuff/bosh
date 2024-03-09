@@ -1,12 +1,9 @@
 import { type FC } from 'react'
-import { useParams } from 'react-router'
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react'
 
 import './Page.css'
 
 export const Page: FC = () => {
-
-  const { name } = useParams<{ name: string; }>()
 
   return (
     <IonPage>
@@ -15,19 +12,22 @@ export const Page: FC = () => {
           <IonButtons slot="start">
             <IonMenuButton/>
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>0.0.1</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
+      <IonContent fullscreen className="ion-padding">
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
+            <IonTitle size="large">0.0.1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div>
-          <p>page content</p>
-        </div>
+        <h1>
+          This is app version 0.0.1.
+        </h1>
+        <p>
+          Try putting the app into background for a bit then re-opening it.
+        </p>
       </IonContent>
     </IonPage>
   )

@@ -6,7 +6,8 @@ import {
   CapacitorUpdater,
   type DownloadCompleteEvent,
   type DownloadEvent,
-  type DownloadFailedEvent
+  type DownloadFailedEvent,
+  type updateAvailableEvent
 } from '@capgo/capacitor-updater'
 
 import { App } from './app'
@@ -58,6 +59,11 @@ CapacitorUpdater.addListener('download', async (downloadEvent: DownloadEvent) =>
 
 CapacitorUpdater.addListener('downloadComplete', async (downloadCompleteEvent: DownloadCompleteEvent) => {
   console.log('BOSH: use-app-listeners: downloadCompleteEvent:', JSON.stringify(downloadCompleteEvent))
+})
+
+CapacitorUpdater.addListener('updateAvailable', async (updateAvailableEvent: updateAvailableEvent) => {
+  console.log('BOSH: use-app-listeners: updateAvailableEvent:', JSON.stringify(updateAvailableEvent))
+
 })
 
 CapacitorUpdater.addListener('downloadFailed', async (downloadFailedEvent: DownloadFailedEvent) => {

@@ -1,0 +1,12 @@
+---
+# Change package.json
+upgrade: true
+# Check peer dependencies before upgrading
+peer: true
+# Use npm
+packageManager: pnpm
+# Skip @nx/* packages as they are migrated through nx cli
+reject: [
+  \@nx*,
+  swiper
+]

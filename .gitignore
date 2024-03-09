@@ -38,4 +38,18 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# iaac
+.terraform/
+.terraform.lock.hcl!/
+
+.env.local
+env-config.js
+
+# Mobile apps
+*.keystore
+.vscode/settings.json
+apps/stuff/src/assets/demo/demo-tokens.html
+apps/stuff/src/assets/demo/demo.styles.css
+junit.xml
+
 .nx/cache

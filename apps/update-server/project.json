@@ -1,0 +1,62 @@
+{
+  "name": "update-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/update-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/update-server",
+        "format": [
+          "cjs"
+        ],
+        "bundle": false,
+        "main": "apps/update-server/src/main.ts",
+        "tsConfig": "apps/update-server/tsconfig.app.json",
+        "assets": [
+          "apps/update-server/src/assets"
+        ],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "update-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "update-server:build:development"
+        },
+        "production": {
+          "buildTarget": "update-server:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

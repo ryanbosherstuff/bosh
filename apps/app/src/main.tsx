@@ -52,13 +52,26 @@ CapApp.addListener('appStateChange', async (state: AppState) => {
 CapacitorUpdater.addListener('download', async (downloadEvent: DownloadEvent) => {
   const { percent } = downloadEvent
 
-  if (percent % 10 === 0) {
-    console.log('BOSH: use-app-listeners: downloadEvent:', JSON.stringify(downloadEvent))
+  if (percent === 10) {
+    console.log('BOSH: main: file download starting:');
+  }
+
+  if (percent === 70) {
+    console.log('BOSH: main: file download complete:');
+  }
+
+  if (percent === 71) {
+    console.log('BOSH: main: file unzip starting:');
+  }
+
+  if (percent === 91) {
+    console.log('BOSH: main: file unzip completed:');
   }
 })
 
-CapacitorUpdater.addListener('downloadComplete', async (downloadCompleteEvent: DownloadCompleteEvent) => {
-  console.log('BOSH: use-app-listeners: downloadCompleteEvent:', JSON.stringify(downloadCompleteEvent))
+CapacitorUpdater.addListener('downloadComplete', async () => {
+  console.log('BOSH: main: total download procedure completed:');
+
 })
 
 CapacitorUpdater.addListener('updateAvailable', async (updateAvailableEvent: updateAvailableEvent) => {

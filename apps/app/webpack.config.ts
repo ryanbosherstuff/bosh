@@ -1,9 +1,9 @@
-import { NxWebpackPlugin } from '@nx/webpack'
-import { join } from 'node:path'
+const NxWebpackPlugin = require('@nx/webpack').NxWebpackPlugin
+const { join } = require('node:path')
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/bosh'),
+    path: join(__dirname, '../../dist/apps/app'),
   },
   devServer: {
     port: 4200,
@@ -17,7 +17,6 @@ module.exports = {
       baseHref: '/',
       assets: [
         './src/favicon.ico',
-        './src/assets'
       ],
       styles: [
         './src/styles.css'

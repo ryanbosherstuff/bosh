@@ -20,7 +20,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@bosh/frontend": [
+      "@frontend": [
         "frontend/src/index.ts"
       ]
     }

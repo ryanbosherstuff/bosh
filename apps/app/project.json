@@ -1,7 +1,7 @@
 {
-  "name": "bosh",
+  "name": "app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/bosh/src",
+  "sourceRoot": "apps/app/src",
   "projectType": "application",
   "targets": {},
   "tags": []

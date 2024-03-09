@@ -1,13 +1,13 @@
-const { FlatCompat } = require('@eslint/eslintrc');
-const nxEslintPlugin = require('@nx/eslint-plugin');
-const eslintPluginImport = require('eslint-plugin-import');
-const eslintPluginSimpleImportSort = require('eslint-plugin-simple-import-sort');
-const js = require('@eslint/js');
+const { FlatCompat } = require('@eslint/eslintrc')
+const nxEslintPlugin = require('@nx/eslint-plugin')
+const eslintPluginImport = require('eslint-plugin-import')
+const eslintPluginSimpleImportSort = require('eslint-plugin-simple-import-sort')
+const js = require('@eslint/js')
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-});
+})
 
 module.exports = [
   {
@@ -57,7 +57,7 @@ module.exports = [
           groups: [
             ['^react', '^@?\\w'],
             [
-              '^(@bosh/frontend)(/.*|$)',
+              '^(@frontend)(/.*|$)',
             ],
             ['^\\u0000'],
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
@@ -78,10 +78,5 @@ module.exports = [
     ...config,
     files: ['**/*.js', '**/*.jsx'],
     rules: {},
-  })),
-  ...compat.config({ env: { jest: true } }).map((config) => ({
-    ...config,
-    files: ['**/*.spec.ts', '**/*.spec.tsx', '**/*.spec.js', '**/*.spec.jsx'],
-    rules: {},
-  })),
-];
+  }))
+]

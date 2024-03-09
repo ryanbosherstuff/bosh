@@ -92,6 +92,9 @@ dependencies:
   axios:
     specifier: ^1.6.7
     version: 1.6.7
+  body-parser:
+    specifier: ^1.20.2
+    version: 1.20.2
   capacitor-plugin-safe-area:
     specifier: ^2.0.6
     version: 2.0.6(@capacitor/core@5.7.2)
@@ -259,6 +262,9 @@ devDependencies:
   '@swc/helpers':
     specifier: ~0.5.2
     version: 0.5.6
+  '@types/body-parser':
+    specifier: ^1.19.5
+    version: 1.19.5
   '@types/crypto-js':
     specifier: ^4.2.2
     version: 4.2.2

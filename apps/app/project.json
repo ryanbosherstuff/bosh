@@ -3,6 +3,41 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/app/src",
   "projectType": "application",
-  "targets": {},
+  "targets": {
+    "sync": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "all",
+      "options": {
+        "command": "npx cap",
+        "cwd": "apps/app"
+      },
+      "configurations": {
+        "all": {
+          "command": "npx cap sync"
+        },
+        "android": {
+          "command": "npx cap sync android"
+        },
+        "ios": {
+          "command": "npx cap sync ios"
+        }
+      }
+    },
+    "open": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx cap",
+        "cwd": "apps/app"
+      },
+      "configurations": {
+        "android": {
+          "command": "npx cap open android"
+        },
+        "ios": {
+          "command": "npx cap open ios"
+        }
+      }
+    }
+  },
   "tags": []
 }

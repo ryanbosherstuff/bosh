@@ -1,3 +1,8 @@
+import { type FC } from 'react'
+import { Redirect, Route } from 'react-router-dom'
+import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react'
+import { IonReactRouter } from '@ionic/react-router'
+
 import { Menu, Page } from '@frontend'
 
 /* Core CSS required for Ionic components to work properly */
@@ -13,10 +18,6 @@ import '@ionic/react/css/text-alignment.css'
 import '@ionic/react/css/text-transformation.css'
 import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react'
-import { IonReactRouter } from '@ionic/react-router'
-import { type FC } from 'react'
-import { Redirect, Route } from 'react-router-dom'
 /* Theme variables */
 import '../theme/variables.css'
 

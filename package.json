@@ -3,8 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "android": "run-s build:app sync:app:android",
+    "ios": "run-s build:app sync:app:ios",
     "build:app": "nx run app:build:development --skip-nx-cache",
     "serve:app": "nx run app:serve:development --skip-nx-cache",
+    "sync:app": "nx run app:sync",
+    "sync:app:android": "nx run app:sync:android",
+    "sync:app:ios": "nx run app:sync:ios",
+    "open:app:android": "nx run app:open:android",
+    "open:app:ios": "nx run app:sync:ios",
     "build:server": "nx run update-server:build:development --skip-nx-cache",
     "serve:server": "nx run update-server:serve:development --skip-nx-cache"
   },

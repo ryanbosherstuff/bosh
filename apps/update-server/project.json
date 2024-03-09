@@ -12,16 +12,13 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/apps/update-server",
+        "outputPath": "dist/apps/server",
         "format": [
           "cjs"
         ],
         "bundle": false,
         "main": "apps/update-server/src/main.ts",
         "tsConfig": "apps/update-server/tsconfig.app.json",
-        "assets": [
-          "apps/update-server/src/assets"
-        ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,

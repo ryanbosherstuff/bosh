@@ -48,10 +48,11 @@ const getWebServerURL = () => {
 
 const getUpdateServerURL = (): string => {
   const ip = getIpAddress()
+  const env = process.env['NX_UIRA_ENVIRONMENT'] || 'PROD'
 
   if (!ip) throw ('Failed to obtain IP address')
 
-  return `http://${ip}:3000/update`
+  return `http://${ip}:3000/updates/${env.toLowerCase()}`
 }
 
 // Stuff specific config that deviates from base

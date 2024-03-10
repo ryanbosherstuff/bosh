@@ -9,6 +9,8 @@ PODS:
   - CapacitorCordova (5.7.2)
   - CapacitorDevice (5.0.7):
     - Capacitor
+  - CapacitorDialog (5.0.7):
+    - Capacitor
   - CapacitorHaptics (5.0.7):
     - Capacitor
   - CapacitorKeyboard (5.0.8):
@@ -33,6 +35,7 @@ DEPENDENCIES:
   - "CapacitorBrowser (from `../../../../node_modules/.pnpm/@capacitor+browser@5.2.0_@capacitor+core@5.7.2/node_modules/@capacitor/browser`)"
   - "CapacitorCordova (from `../../../../node_modules/.pnpm/@capacitor+ios@5.7.2_@capacitor+core@5.7.2/node_modules/@capacitor/ios`)"
   - "CapacitorDevice (from `../../../../node_modules/.pnpm/@capacitor+device@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/device`)"
+  - "CapacitorDialog (from `../../../../node_modules/.pnpm/@capacitor+dialog@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/dialog`)"
   - "CapacitorHaptics (from `../../../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../../../node_modules/.pnpm/@capacitor+keyboard@5.0.8_@capacitor+core@5.7.2/node_modules/@capacitor/keyboard`)"
   - "CapacitorNetwork (from `../../../../node_modules/.pnpm/@capacitor+network@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/network`)"
@@ -57,6 +60,8 @@ EXTERNAL SOURCES:
     :path: "../../../../node_modules/.pnpm/@capacitor+ios@5.7.2_@capacitor+core@5.7.2/node_modules/@capacitor/ios"
   CapacitorDevice:
     :path: "../../../../node_modules/.pnpm/@capacitor+device@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/device"
+  CapacitorDialog:
+    :path: "../../../../node_modules/.pnpm/@capacitor+dialog@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/dialog"
   CapacitorHaptics:
     :path: "../../../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.2/node_modules/@capacitor/haptics"
   CapacitorKeyboard:
@@ -77,6 +82,7 @@ SPEC CHECKSUMS:
   CapacitorBrowser: a6deae9e5bf87f62b62a753cff7992c5def9e771
   CapacitorCordova: 70b13b8fddb6f35d8adcfe06cb5045c07f35f6de
   CapacitorDevice: fc91bdb484dc0e70755e9b621cd557afe642613a
+  CapacitorDialog: ea1beaccb7f825191aa18b72cba8981b881b3b2d
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
   CapacitorKeyboard: aec619a578235c6ce279075009a2689c2cf5c42c
   CapacitorNetwork: 81ef9728aa7a65cac8c1181ce79e578162b57b57
@@ -86,6 +92,6 @@ SPEC CHECKSUMS:
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Version: de5907f2c5d0f3cf21708db7801d1d5401139486
 
-PODFILE CHECKSUM: cb5e560d1aa4353f1143331f4c1484c3ecd88a89
+PODFILE CHECKSUM: 5351d46cd692a2efc2435604567bb026d5db52d8
 
 COCOAPODS: 1.15.2
